@@ -11,8 +11,13 @@ function App() {
   const [num2, setNum2] = useState("");
   const [sum, setSum] = useState();
   const[counter, setCounter] =useState("0");
+  const Data = ['Apple', 'Banana', 'Cherry', 'Date', 'Elderberry', 'Fig', 'Grape'];
+  const [searchText, setSearchText] = useState('');
 
-
+  // Function to filter records based on search text
+  const filteredData = Data.filter(item => 
+    item.toLowerCase().includes(searchText.toLowerCase())
+  );
   const removeChild = () => {
     setdata(data.slice(0, -1));
   };
@@ -64,15 +69,29 @@ function App() {
       <section>
         <h2>Counter</h2>
         <div id='flex'>
-        <button  onClick={() => setCounter(counter + 1)}>
-          Increment
+        <button  onClick={() => setCounter(counter - 1)}>
+              Decrement
         </button>
         <p  >{counter}</p>
-        <button  onClick={() => setCounter(counter - 1)}>
-          Decrement
+        <button  onClick={() => setCounter(counter + 1)}>
+      Increment
         </button>
         </div>
 
+      </section>
+      <section>
+        <h2>Search Filter</h2>
+        <input
+          type="text"
+          placeholder="Search..."
+          value={searchText}
+          onChange={(e) => setSearchText(e.target.value)}
+        />
+        <ul>
+          {filteredData.map((item, index) => (
+            <li key={index}>{item}</li>
+          ))}
+        </ul>
       </section>
         <section>
           <h2>Two-Way Data Binding</h2>
