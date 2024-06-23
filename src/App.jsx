@@ -10,7 +10,7 @@ function App() {
   const [num1, setNum1] = useState("");
   const [num2, setNum2] = useState("");
   const [sum, setSum] = useState();
-  const[counter, setCounter] =useState("0");
+  const[counter, setCounter] =useState(0);
   const Data = ['Apple', 'Banana', 'Cherry', 'Date', 'Elderberry', 'Fig', 'Grape'];
   const [searchText, setSearchText] = useState('');
 
@@ -69,7 +69,7 @@ function App() {
       <section>
         <h2>Counter</h2>
         <div id='flex'>
-        <button  onClick={() => setCounter(counter - 1)}>
+        <button  onClick={() => setCounter(pre=>  pre <= 0 ?  0 : pre - 1)}>
               Decrement
         </button>
         <p  >{counter}</p>
@@ -87,11 +87,11 @@ function App() {
           value={searchText}
           onChange={(e) => setSearchText(e.target.value)}
         />
-        <ul>
+        <ol>
           {filteredData.map((item, index) => (
             <li key={index}>{item}</li>
           ))}
-        </ul>
+        </ol>
       </section>
         <section>
           <h2>Two-Way Data Binding</h2>
