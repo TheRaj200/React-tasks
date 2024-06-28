@@ -45,13 +45,15 @@ function App() {
       <section className=' relative bg-zinc-800 mb-5 p-10 border-2 rounded-md border-zinc-700'>
         <h2 >Sum Two Numbers</h2>
         <div id='inputs'>
-        <input className='gap py-[5px] rounded-md pl-5'
-          type="number"
+        <input className='  gap py-[5px] rounded-md pl-5'
+           type="text"
+            inputmode="numeric" 
           value={num1}
           onChange={(e) => setNum1(e.target.value)}
           />
         <input
-          type="number"
+             type="text"
+             inputmode="numeric" 
            className='gap py-[5px] rounded-md pl-5'
           value={num2}
           onChange={(e) => setNum2(e.target.value)}
