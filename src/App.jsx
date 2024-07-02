@@ -85,7 +85,7 @@ function App() {
       <section className='bg-zinc-800 mb-5  p-10 border-2 rounded-md border-zinc-700'>
         <h2 className='pb-5'>Counter</h2>
         <div id='flex'>
-        <button  onClick={() => setCounter(pre=>  pre <= 0 ?  0 : pre - 1)}>
+        <button  onClick={() => setCounter(counter - 1)}>
             -
         </button>
         <p className='pt-2'  >{counter}</p>
